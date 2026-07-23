@@ -1,4 +1,5 @@
 # TODO App
+<img width="1620" height="855" alt="image" src="https://github.com/user-attachments/assets/909bc0bc-567d-4cfb-a81b-c1974f600566" />
 
 A TODO list application with an ASP.NET Core (.NET 10) REST API backend and an
 Angular frontend. Users can view their list, add items, mark them complete and
@@ -161,19 +162,19 @@ A few decisions I made that worth calling out:
 
 - **Frontend kept thin.** The Angular app is a single standalone component using
   signals for state, with a small typed `TodoService` isolating all HTTP calls.
-  ▎ My primary frontend background is React, so I built this Angular frontend to
-  ▎ match the role's stack rather than default to what I know. The mental model
-  ▎ carried over well:
-  ▎
-  ▎ | React                        | Angular equivalent used here    |
-  ▎ |------------------------------|---------------------------------|
-  ▎ | Function component + JSX     | Standalone component + template |
-  ▎ | useState                     | Signals (signal())              |
-  ▎ | fetch / axios in a hook      | TodoService using HttpClient    |
-  ▎ | Conditional rendering in JSX | @if / @for control-flow blocks  |
-  ▎ | Vite/CRA dev proxy           | proxy.conf.json                 |
-  ▎
-  ▎ I kept the app to a single component with a small, typed service so the
-  ▎ structure stays easy to follow. 
+  My primary frontend background is React, so I built this Angular frontend to
+  match the role's stack rather than default to what I know. The mental model
+  carried over well:
+ 
+  | React                        | Angular equivalent used here    |
+  |------------------------------|---------------------------------|
+  | Function component + JSX     | Standalone component + template |
+  | useState                     | Signals (signal())              |
+  | fetch / axios in a hook      | TodoService using HttpClient    |
+  | Conditional rendering in JSX | @if / @for control-flow blocks  |
+  | Vite/CRA dev proxy           | proxy.conf.json                 |
+  
+  I kept the app to a single component with a small, typed service so the
+  structure stays easy to follow. 
   A dev-server proxy points `/api` at the backend so there is no cross-origin
   configuration to manage during development.
