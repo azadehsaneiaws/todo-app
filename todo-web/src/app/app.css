@@ -1,0 +1,110 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 1rem;
+  background: #f4f5f7;
+}
+
+.card {
+  width: 100%;
+  max-width: 30rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 1.75rem;
+}
+
+h1 {
+  margin: 0 0 1.25rem;
+  font-size: 1.5rem;
+}
+
+.add-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.add-form input {
+  flex: 1;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #cbd0d8;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.add-form button {
+  padding: 0.6rem 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.add-form button:disabled {
+  background: #9db4ee;
+  cursor: not-allowed;
+}
+
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #eceef1;
+  border-radius: 8px;
+}
+
+.todo label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+.todo.done .title {
+  text-decoration: line-through;
+  color: #9aa1ac;
+}
+
+.delete {
+  border: none;
+  background: transparent;
+  color: #9aa1ac;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.25rem 0.4rem;
+  border-radius: 6px;
+}
+
+.delete:hover {
+  color: #dc2626;
+  background: #fdeaea;
+}
+
+.muted {
+  color: #8a919c;
+  text-align: center;
+  margin: 1rem 0 0;
+}
+
+.error {
+  color: #dc2626;
+  background: #fdeaea;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  margin: 0 0 1rem;
+}

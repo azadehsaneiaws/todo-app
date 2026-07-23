@@ -1,0 +1,28 @@
+@host = http://localhost:5089
+
+### List all todos
+GET {{host}}/api/todos
+
+### Create a todo
+# @name create
+POST {{host}}/api/todos
+Content-Type: application/json
+
+{
+  "title": "Buy milk"
+}
+
+### Get a single todo (uses the id returned by the create request above)
+GET {{host}}/api/todos/{{create.response.body.id}}
+
+### Update a todo (rename + mark complete)
+PUT {{host}}/api/todos/{{create.response.body.id}}
+Content-Type: application/json
+
+{
+  "title": "Buy milk and eggs",
+  "isCompleted": true
+}
+
+### Delete a todo
+DELETE {{host}}/api/todos/{{create.response.body.id}}

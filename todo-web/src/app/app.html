@@ -1,0 +1,43 @@
+<main class="page">
+  <section class="card">
+    <h1>My TODO list</h1>
+
+    <form class="add-form" (submit)="add(); $event.preventDefault()">
+      <input
+        type="text"
+        name="newTitle"
+        placeholder="What needs doing?"
+        maxlength="200"
+        [(ngModel)]="newTitle"
+        aria-label="New todo title" />
+      <button type="submit" [disabled]="!newTitle.trim()">Add</button>
+    </form>
+
+    @if (error()) {
+      <p class="error" role="alert">{{ error() }}</p>
+    }
+
+    @if (loading()) {
+      <p class="muted">Loading…</p>
+    } @else if (items().length === 0) {
+      <p class="muted">Nothing here yet. Add your first todo above.</p>
+    } @else {
+      <ul class="todo-list">
+        @for (todo of items(); track todo.id) {
+          <li class="todo" [class.done]="todo.isCompleted">
+            <label>
+              <input
+                type="checkbox"
+                [checked]="todo.isCompleted"
+                (change)="toggle(todo)" />
+              <span class="title">{{ todo.title }}</span>
+            </label>
+            <button class="delete" type="button" (click)="remove(todo)" aria-label="Delete todo">
+              ✕
+            </button>
+          </li>
+        }
+      </ul>
+    }
+  </section>
+</main>
